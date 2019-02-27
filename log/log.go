@@ -1,10 +1,10 @@
 package log
 
 import (
-	"../checkUser"
-	"../dbConnect"
-	"time"
+	"github.com/TrashPony/Arduino-RFID-Client/checkUser"
+	"github.com/TrashPony/Arduino-RFID-Client/dbConnect"
 	"log"
+	"time"
 )
 
 type Log struct {
@@ -22,7 +22,7 @@ func OpenDoorLog(user *checkUser.User) {
 
 func GetLogs() []Log {
 
-	rows, err := dbConnect.GetDBConnect().Query("SELECT id, uuid, name, event, time FROM log")
+	rows, err := dbConnect.GetDBConnect().Query("SELECT id, uuid, name, event, time FROM log ORDER BY time DESC LIMIT 250")
 	if err != nil {
 		log.Fatal("get user: " + err.Error())
 	}

@@ -1,11 +1,11 @@
 package webSocket
 
 import (
+	rfidLog "github.com/TrashPony/Arduino-RFID-Client/log"
+	"github.com/TrashPony/Arduino-RFID-Client/transferData"
 	"github.com/gorilla/websocket"
 	"net/http"
 	"time"
-	"../transferData"
-	rfidLog "../log"
 )
 
 var usersWs = make(map[*websocket.Conn]*Clients)

@@ -1,7 +1,7 @@
 package checkUser
 
 import (
-	"../dbConnect"
+	"github.com/TrashPony/Arduino-RFID-Client/dbConnect"
 	"log"
 )
 
@@ -10,7 +10,7 @@ type User struct {
 	UUID string
 }
 
-func UUIDCheck(uuid string) (*User, bool){
+func UUIDCheck(uuid string) (*User, bool) {
 	rows, err := dbConnect.GetDBConnect().Query("SELECT name, uuid FROM users WHERE uuid=$1", uuid)
 	if err != nil {
 		log.Fatal("get user: " + err.Error())

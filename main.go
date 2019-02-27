@@ -1,12 +1,12 @@
 package main
 
 import (
+	"github.com/TrashPony/Arduino-RFID-Client/port"
+	"github.com/TrashPony/Arduino-RFID-Client/transferData"
+	"github.com/TrashPony/Arduino-RFID-Client/webSocket"
 	"github.com/gorilla/mux"
-	"net/http"
 	"log"
-	"./webSocket"
-	"./port"
-	"./transferData"
+	"net/http"
 )
 
 func main() {
